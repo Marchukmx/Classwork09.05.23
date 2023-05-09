@@ -8,8 +8,8 @@ class School:
         print(f'{student.name} був додани до школи {self.name}') #Дописати, коли створено клас студентів
      def expel_student(self,student):
          expelled_student = next(filter(lambda s: s.name == student.name
-                                        and s.grage == student.grade))
-         if expel_student is not None:
+                                        and s.grade == student.grade, self.students), None)
+         if expelled_student is not None:
              self.students.remove(expelled_student)
              print(f"{expelled_student} був видалений з {self.name}")
          else:
@@ -34,7 +34,16 @@ dima = Student("Dima",23)
 gleb = Student("Gleb",100)
 
 my_school = School("ItStep",[alisa,masha,kostya,dima,gleb])
+print("Початкові студенти")
+for student in my_school.students:
+    print(student)
 
+my_school.admit_student(Student("Bogdan", 3))
+my_school.expel_student(Student("Alisa", 6))
+
+print("Оновлення")
+for student in my_school.students:
+    print(student)
 
 '''
 multiply = lambda x, y: x * y
