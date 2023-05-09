@@ -16,3 +16,5 @@ class Student:
     def demote(self):
         self.grade -= 1
         print(f"{self.name} був понижений до рангу {self.grade}")
+    def __str__(self):
+        return f"{self.name} - Ранг {self.grade}"
