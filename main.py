@@ -3,6 +3,7 @@ class School:
      def __init__(self, name, students):
         self.name = name
         self.students = students #Список студентів
+        self.students = []
      def admit_student(self, student):
         self.students.append(student)
         print(f'{student.name} був додани до школи {self.name}') #Дописати, коли створено клас студентів
@@ -14,6 +15,11 @@ class School:
              print(f"{expelled_student} був видалений з {self.name}")
          else:
              print(f"{expelled_student.name} не був видалений {self.name}")
+
+     def add_teacher(self):
+         self.teachers.append(teacher)
+
+
 class Student:
     def __init__(self,name,grade):
         self.name = name
@@ -26,6 +32,18 @@ class Student:
         print(f"{self.name} був понижений до рангу {self.grade}")
     def __str__(self):
         return f"{self.name} - Ранг {self.grade}"
+
+class Teacher:
+    def __init__(self,name,subject,classes):
+        self.name = name
+        self.subject = subject
+        self.classes = classes
+class Class:
+    def __init__(self,number , students):
+        self.number = number
+        self.student = []
+    def add_student(self, student):
+        self.students.append(student)
 
 alisa = Student("Alisa",6)
 masha = Student("Masha",2)
@@ -44,11 +62,3 @@ my_school.expel_student(Student("Alisa", 6))
 print("Оновлення")
 for student in my_school.students:
     print(student)
-
-'''
-multiply = lambda x, y: x * y
-print(multiply(2,5))
-numbers = [1,2,3,4,5,6,7,8,9,10]
-filtered_numbers = list(filter(lambda x: x%2 == 0,numbers))
-print(filtered_numbers)
-'''
