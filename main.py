@@ -14,7 +14,7 @@ class School:
              self.students.remove(expelled_student)
              print(f"{expelled_student} був видалений з {self.name}")
          else:
-             print(f"{expelled_student.name} не був видалений {self.name}")
+             print(f"{student.name} не був видалений {self.name}")
 
      def add_teacher(self):
          self.teachers.append(teacher)
