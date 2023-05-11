@@ -78,3 +78,27 @@ class Class:
         for student in self.students:
             total_grades += student.grade
         return total_grades / len(self.students)
+
+#4 ЗАВДАННЯ
+
+class1 = Class(1111)
+class2 = Class(1121)
+my_school.add_class(class1)
+my_school.add_class(class2)
+class1.add_student(lisa)
+class1.add_student(andriiko)
+class2.add_student(dima)
+class2.add_student(gleb)
+
+teacher_1 = Teacher("Volodya", 'real life', class2)
+teacher_2 = Teacher("Anastasia", 'Астрофізика', class1)
+
+my_school.add_teacher(teacher_1)
+my_school.add_teacher(teacher_2)
+for class_obj in my_school.classes:
+    print("Класи які наявні в школі:", class_obj.number)
+for teacher in my_school.teachers:
+    print(teacher.name)
+print(my_school.get_school_statistics())
+print(class1.get_average_grade())
+print(class2.get_average_grade())
